@@ -8,6 +8,10 @@ const Handler = () => {
   const [data, setData] = useState<API.Handler>();
 
   useEffect(() => {
+    if (!name) {
+      return;
+    }
+
     axios
       .get<API.Handler>(
         `https://usesilo-stage.herokuapp.com/api/docs/handlers/${name}`
@@ -18,7 +22,7 @@ const Handler = () => {
       .catch((e) => {
         console.log(e);
       });
-  }, []);
+  }, [name]);
 
   return (
     <>
