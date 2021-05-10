@@ -25,10 +25,18 @@ const Handler = () => {
   }, [name]);
 
   return (
-    <>
-      <h1>{data?.name}</h1>
-      <p>{data?.description}</p>
-    </>
+    <div className="relative bg-white border-b-2 border-gray-100 py-6">
+      <div className="container mx-auto flex flex-row items-center">
+        <div className="flex flex-col mr-8">
+          <h1 className="text-3xl">{data?.name}</h1>
+          <p>{data?.description}</p>
+        </div>
+        <label className="bg-green-100 text-green-900 font-semibold p-2 rounded h-auto mr-2">
+          {data?.pathMethods?.[0].method}
+        </label>
+        <p className="text-gray-500 text-xl">{data?.pathMethods?.[0].path}</p>
+      </div>
+    </div>
   );
 };
 
