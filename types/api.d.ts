@@ -1,6 +1,16 @@
 declare module "API" {
   global {
     namespace API {
+      type AccessRule = {
+        Feature: string;
+        Access: "edit" | "view";
+      };
+
+      type ArrayDefinition = {
+        $ref?: Ref;
+        $schema?: string;
+      };
+
       type Handler = {
         name?: string;
         description?: string;
@@ -43,17 +53,15 @@ declare module "API" {
       type Property = {
         type: GoType;
         format?: GoTypeFormat;
+        items?: ArrayDefinition;
         $schema?: string;
-        $ref?: `#/definitions/${string}`;
+        $ref?: Ref;
       };
 
       type GoType = "string" | "integer" | "object";
       type GoTypeFormat = "date-time";
 
-      type AccessRule = {
-        Feature: string;
-        Access: "edit" | "view";
-      };
+      type Ref = `#/definitions/${string}`;
     }
   }
 }

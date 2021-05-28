@@ -27,7 +27,7 @@ const Handler = () => {
   }, [name]);
 
   return (
-    <div className="w-100">
+    <div className="w-100 p-3">
       <div className="relative bg-white border-b-2 border-gray-100 p-6">
         <div className="container mx-auto flex flex-row items-center flex-wrap">
           <div className="flex flex-col mr-8">
@@ -44,15 +44,15 @@ const Handler = () => {
           </div>
         </div>
       </div>
-      <div className="container mx-auto flex flex-row px-3 py-6 flex-wrap">
-        <div className="flex-grow m-3">
+      <div className="container mx-auto flex flex-row py-6 flex-wrap">
+        <div className="flex-grow w-5/12 min-w-min md:pr-3">
           <h2 className="text-xl p-2 ml-50 pl-3 flex items-center text-gray-700 bg-pink-100 rounded">
             <CloudUploadIcon className="w-5 mr-2" />
             Request
           </h2>
           <ProtocolNavigator httpObj={data?.requestBody} />
         </div>
-        <div className="flex-grow m-3">
+        <div className="flex-grow w-5/12 min-w-min md:pr-3">
           <h2 className="text-xl p-2 ml-50 pl-3 flex items-center text-gray-700 bg-yellow-100 rounded">
             <CloudDownloadIcon className="w-5 mr-2" />
             Response
