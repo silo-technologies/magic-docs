@@ -11,6 +11,12 @@ declare module "API" {
         $schema?: string;
       };
 
+      type HandlerSummary = {
+        path?: string;
+        httpMethod?: string;
+        name?: string;
+      };
+
       type Handler = {
         name?: string;
         description?: string;
@@ -27,11 +33,13 @@ declare module "API" {
         };
         requestBody?: HTTPObject;
         responseBody?: HTTPObject;
+        queryParameters?: QueryParameter[];
       };
 
       type HTTPObject = {
-        type: `*protocol.${string}`;
+        type: `${"[]" | undefined}*protocol.${string}`;
         schema?: {
+          type?: string;
           $schema: string;
           $ref: string;
           definitions: Record<string, Protocol>;
@@ -56,6 +64,12 @@ declare module "API" {
         items?: ArrayDefinition;
         $schema?: string;
         $ref?: Ref;
+      };
+
+      type QueryParameter = {
+        name?: string;
+        required?: boolean;
+        type?: string;
       };
 
       type GoType = "string" | "integer" | "object";

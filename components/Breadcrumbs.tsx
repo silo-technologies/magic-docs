@@ -7,7 +7,7 @@ type Props = {
 };
 const Breadcrumbs: React.FC<Props> = ({ stack, onCrumbClicked }) => {
   return stack.length > 1 ? (
-    <div className="m-3 flex flex-wrap">
+    <div className="m-3 pb-1 flex flex-wrap border-b border-gray-200">
       <strong
         onClick={() => onCrumbClicked(0)}
         className="text-blue-500 hover:bg-blue-100 rounded py-2 px-1 leading-none cursor-pointer"
