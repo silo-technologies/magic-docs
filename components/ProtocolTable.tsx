@@ -7,7 +7,7 @@ type Props = {
 const ProtocolTable: React.FC<Props> = ({ protocolKey, rows }) => {
   return (
     <div className="container mx-auto my-3 flex">
-      <div className="hidden md:flex flex-col items-end w-40 text-right text-1xl text-blue-800 font-mono font-semibold mr-3 p-3">
+      <div className="hidden md:flex flex-col items-end w-30 text-right text-1xl text-blue-800 font-mono font-semibold mr-3 p-3">
         {protocolKey ? (
           <div className="h-8 flex flex-col-reverse">
             <h3>Name</h3>
