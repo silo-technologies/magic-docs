@@ -72,7 +72,7 @@ declare module "API" {
         type?: string;
       };
 
-      type GoType = "string" | "integer" | "object";
+      type GoType = "string" | "integer" | "object" | "array";
       type GoTypeFormat = "date-time";
 
       type Ref = `#/definitions/${string}`;

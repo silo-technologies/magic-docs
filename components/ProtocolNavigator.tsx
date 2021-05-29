@@ -28,13 +28,11 @@ const ProtocolNavigator: React.FC<Props> = ({
   title,
   colorClassName,
 }) => {
-  console.log(httpObj);
   const protocolMap: Record<string, API.Protocol> =
     httpObj?.schema?.definitions ?? {};
   const [protocolStack, setProtocolStack] = useState<string[]>([]);
   const protocolKey = protocolStack[protocolStack.length - 1];
   const protocol = protocolMap[protocolKey] as API.Protocol;
-  console.log("protocol", protocol, protocolKey, protocolMap);
 
   // Initialize the root protocol
   useEffect(() => {
@@ -73,11 +71,16 @@ const ProtocolNavigator: React.FC<Props> = ({
             protocolKey={protocolKey}
             rows={Object.keys(protocol?.properties ?? {})
               .sort((a, b) => {
+                // Sort objects, then arrays, then primitives
                 const propA = protocol?.properties?.[a];
                 const propB = protocol?.properties?.[b];
                 return propA?.$ref && !propB?.$ref
-                  ? -2
+                  ? -3
                   : propB?.$ref && !propA?.$ref
+                  ? 3
+                  : propA?.type === "array" && propB?.type !== "array"
+                  ? -2
+                  : propB?.type === "array" && propA?.type !== "array"
                   ? 2
                   : a.localeCompare(b);
               })
