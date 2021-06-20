@@ -4,12 +4,20 @@ import { ReactNode } from "react";
 type Props = {
   icon?: ReactNode;
   title?: string;
-  className?: string;
+  bgColorClassName?: string;
+  textColorClassName?: string;
 };
-const SectionHeader: React.FC<Props> = ({ icon, title, className }) => {
+const SectionHeader: React.FC<Props> = ({
+  icon,
+  title,
+  bgColorClassName,
+  textColorClassName,
+}) => {
   return (
     <h2
-      className={`w-full text-xl p-2 ml-50 pl-3 flex items-center text-gray-700 ${className} rounded`}
+      className={`w-full text-xl p-2 ml-50 pl-3 flex items-center ${
+        textColorClassName || "text-gray-700"
+      } ${bgColorClassName} rounded`}
     >
       {icon}
       {title}

@@ -34,10 +34,11 @@ declare module "API" {
         requestBody?: HTTPObject;
         responseBody?: HTTPObject;
         queryParameters?: QueryParameter[];
+        possibleErrors?: PossibleError[];
       };
 
       type HTTPObject = {
-        type: `${"[]" | undefined}*protocol.${string}`;
+        type: `${"[]" | ""}*protocol.${string}`;
         schema?: {
           type?: string;
           $schema?: string;
@@ -48,6 +49,12 @@ declare module "API" {
           };
           definitions: Record<string, Protocol>;
         };
+      };
+
+      type PossibleError = {
+        key: string;
+        httpStatusCode: number;
+        details: HTTPObject;
       };
 
       type Protocol = {

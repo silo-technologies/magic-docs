@@ -12,13 +12,15 @@ type Props = {
   httpObj?: API.HTTPObject;
   icon?: ReactNode;
   title?: string;
-  colorClassName?: string;
+  bgColorClassName?: string;
+  textColorClassName?: string;
 };
 const ProtocolNavigator: React.FC<Props> = ({
   httpObj,
   icon,
   title,
-  colorClassName,
+  bgColorClassName,
+  textColorClassName,
 }) => {
   const protocolMap: Record<string, API.Protocol> =
     httpObj?.schema?.definitions ?? {};
@@ -55,7 +57,12 @@ const ProtocolNavigator: React.FC<Props> = ({
 
   return (
     <>
-      <SectionHeader icon={icon} title={title} className={colorClassName} />
+      <SectionHeader
+        icon={icon}
+        title={title}
+        bgColorClassName={bgColorClassName}
+        textColorClassName={textColorClassName}
+      />
       {httpObj ? (
         <>
           <Breadcrumbs stack={protocolStack} onCrumbClicked={navigate} />
@@ -100,7 +107,7 @@ const ProtocolNavigator: React.FC<Props> = ({
           />
         </>
       ) : (
-        <NoResults colorClassName={colorClassName} />
+        <NoResults colorClassName={bgColorClassName} />
       )}
     </>
   );

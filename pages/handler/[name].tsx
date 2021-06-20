@@ -8,6 +8,7 @@ import {
   ArrowLeftIcon,
   QuestionMarkCircleIcon,
   InformationCircleIcon,
+  ExclamationCircleIcon,
 } from "@heroicons/react/solid";
 import HttpMethodPill from "../../components/HttpMethodPill";
 import Viewport from "../../components/Viewport";
@@ -66,7 +67,7 @@ const Handler = () => {
               <SectionHeader
                 icon={<QuestionMarkCircleIcon className="w-5 mr-2" />}
                 title="Query Parameters"
-                className="bg-indigo-100 mr-3"
+                bgColorClassName="bg-indigo-100 mr-3"
               />
               <ProtocolTable
                 rows={data?.queryParameters?.map((queryParam, index) => (
@@ -86,7 +87,7 @@ const Handler = () => {
             httpObj={data?.requestBody}
             icon={<CloudUploadIcon className="w-5 mr-2" />}
             title="Request"
-            colorClassName="bg-pink-100"
+            bgColorClassName="bg-pink-100"
           />
         </div>
 
@@ -95,8 +96,20 @@ const Handler = () => {
             httpObj={data?.responseBody}
             icon={<CloudDownloadIcon className="w-5 mr-2" />}
             title="Response"
-            colorClassName="bg-yellow-100"
+            bgColorClassName="bg-yellow-100"
           />
+        </div>
+
+        <div className="flex flex-col flex-grow min-w-min md:pr-3">
+          {data?.possibleErrors?.map((errorObj) => (
+            <ProtocolNavigator
+              httpObj={errorObj.details}
+              icon={<ExclamationCircleIcon className="w-5 mr-2" />}
+              title={`${errorObj.key} - ${errorObj.httpStatusCode}`}
+              bgColorClassName="bg-red-400"
+              textColorClassName="text-white"
+            />
+          ))}
         </div>
       </MainContent>
     </Viewport>
