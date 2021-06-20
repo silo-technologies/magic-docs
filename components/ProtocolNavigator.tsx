@@ -8,14 +8,6 @@ import SectionHeader from "./SectionHeader";
 const stripRefPrefix = ($ref?: string) =>
   $ref?.replace("#/definitions/", "") ?? "";
 
-const stripProtocolTypePrefix = (type?: string) => {
-  if (!type) {
-    return "";
-  }
-  const chunks = type?.split(".");
-  return chunks[chunks.length - 1] ?? "";
-};
-
 type Props = {
   httpObj?: API.HTTPObject;
   icon?: ReactNode;

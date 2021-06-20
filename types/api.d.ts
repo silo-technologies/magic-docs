@@ -74,6 +74,7 @@ declare module "API" {
         name?: string;
         required?: boolean;
         type?: string;
+        description?: string;
       };
 
       type GoType = "string" | "integer" | "object" | "array";

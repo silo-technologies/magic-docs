@@ -73,9 +73,10 @@ const Handler = () => {
                   <tr key={index} className="h-10">
                     <td className="pr-3">{queryParam.name}</td>
                     <td className="pr-3 text-blue-800">{queryParam.type}</td>
-                    <td className="text-red-500">
+                    <td className="text-red-500 pr-3">
                       {queryParam.required ? "required" : null}
                     </td>
+                    <td>{queryParam.description}</td>
                   </tr>
                 ))}
               />
