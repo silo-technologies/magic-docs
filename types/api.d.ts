@@ -40,8 +40,12 @@ declare module "API" {
         type: `${"[]" | undefined}*protocol.${string}`;
         schema?: {
           type?: string;
-          $schema: string;
-          $ref: string;
+          $schema?: string;
+          $ref?: string;
+          items?: {
+            $schema?: string;
+            $ref?: string;
+          };
           definitions: Record<string, Protocol>;
         };
       };

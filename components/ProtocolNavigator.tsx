@@ -37,7 +37,7 @@ const ProtocolNavigator: React.FC<Props> = ({
   // Initialize the root protocol
   useEffect(() => {
     if (httpObj?.schema?.type === "array") {
-      setProtocolStack([stripProtocolTypePrefix(httpObj?.type)]);
+      setProtocolStack([stripRefPrefix(httpObj?.schema?.items?.$ref)]);
     } else {
       setProtocolStack([stripRefPrefix(httpObj?.schema?.$ref)]);
     }
