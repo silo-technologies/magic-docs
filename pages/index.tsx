@@ -45,7 +45,7 @@ const Home: React.FC<Props> = ({ handlers }) => {
         </div>
       </Navbar>
       <MainContent>
-        <table className="w-full">
+        <table className="w-full max-w-full table-fixed sm:table-auto">
           <tbody className="bg-white divide-y divide-gray-200">
             {handlers
               .filter((handler) => {
@@ -63,11 +63,20 @@ const Home: React.FC<Props> = ({ handlers }) => {
                     router.push(`/handler/${handler.name}`);
                   }}
                 >
-                  <td className="text-right">
+                  <td className="sm:text-right w-20 sm:w-auto">
                     <HttpMethodPill method={handler.httpMethod} />
                   </td>
-                  <td>{handler.name}</td>
-                  <td>{handler.path}</td>
+                  <td>
+                    <div className="flex flex-col">
+                      <span className="break-all sm:break-normal">
+                        {handler.name}
+                      </span>
+                      <span className="text-gray-400 sm:hidden break-all">
+                        {handler.path}
+                      </span>
+                    </div>
+                  </td>
+                  <td className="hidden sm:table-cell">{handler.path}</td>
                 </tr>
               ))}
           </tbody>
