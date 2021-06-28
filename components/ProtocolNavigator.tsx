@@ -94,7 +94,7 @@ const ProtocolNavigator: React.FC<Props> = ({
                     <td className="text-blue-800">
                       {property?.type ?? "object"}
                     </td>
-                    <td>
+                    <td className="px-3">
                       {ref ? (
                         <ProtocolLink onClick={() => push(ref)}>
                           {ref}
