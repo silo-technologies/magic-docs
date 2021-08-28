@@ -1,0 +1,10 @@
+build/
+coverage/
+.vscode/
+.idea/
+.yarn/
+tests_output/
+patches/
+*.graphql
+cypress/support/db/go
+cypress/fixtures/

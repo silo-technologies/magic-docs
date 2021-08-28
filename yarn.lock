@@ -270,6 +270,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/prettier@npm:^2":
+  version: 2.3.2
+  resolution: "@types/prettier@npm:2.3.2"
+  checksum: c4313e16650811f47b07a0fa7ac0742e966f61283a7292eb667fd4626d760bf3b7d896be3eaabb3354ad45fdbe3a340299b018dd3bcce1ff753d030a8cd2479c
+  languageName: node
+  linkType: hard
+
 "@types/prop-types@npm:*":
   version: 15.7.3
   resolution: "@types/prop-types@npm:15.7.3"
@@ -1274,12 +1281,14 @@ __metadata:
     "@heroicons/react": ^1.0.1
     "@types/axios": ^0.14.0
     "@types/node": ^16.7.4
+    "@types/prettier": ^2
     "@types/react": ^17.0.19
     "@types/tailwindcss": ^2.2.1
     autoprefixer: ^10.3.3
     axios: ^0.21.1
     next: ^11.1.0
     postcss: ^8.3.6
+    prettier: ^2.3.2
     react: ^17.0.2
     react-dom: ^17.0.2
     tailwindcss: ^2.2.8
@@ -3011,6 +3020,15 @@ __metadata:
     nanoid: ^3.1.23
     source-map-js: ^0.6.2
   checksum: ff55b91bea21f42c2a94d77fd05c3f66dd15889c68506cf1dbb9cdee8c3b9e9d0e219bcbc6e61a107bd63e3cac0670176486e2a5794c106a4e1b9babceb79317
+  languageName: node
+  linkType: hard
+
+"prettier@npm:^2.3.2":
+  version: 2.3.2
+  resolution: "prettier@npm:2.3.2"
+  bin:
+    prettier: bin-prettier.js
+  checksum: 17ce5784ac67621c292df58e2da60b2ee150c2d6aebea22a6ad9e52fcd6a5e66c349d0a8436ea3bd8ff9d778920a5f68000d7625b74f43558718a49755aa5259
   languageName: node
   linkType: hard
 
