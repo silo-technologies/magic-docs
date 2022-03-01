@@ -108,7 +108,7 @@ export async function getServerSideProps({
 }: {
   params: { environment: string; handler: string };
 }) {
-  const url = `https://${environment}.herokuapp.com/api/docs/handlers/${handlerName}`;
+  const url = `https://${environment}.usesilo.com/api/docs/handlers/${handlerName}`;
   const response = await axios.get<API.Handler>(url, {
     headers: {
       'Content-Type': 'application/json'
