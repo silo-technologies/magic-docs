@@ -1,10 +1,10 @@
 import { useRouter } from 'next/router';
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 
 const Home = () => {
   const router = useRouter();
   useEffect(() => {
-    router.push('/usesilo-stage');
+    router.push('/stage-api');
   }, [router]);
   return (
     <div className="flex justify-center items-center h-screen">
