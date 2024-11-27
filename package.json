@@ -3,11 +3,11 @@
   "version": "0.1.0",
   "private": true,
   "engines": {
-    "node": "18.x"
+    "node": "18.13"
   },
   "scripts": {
     "dev": "NODE_OPTIONS='--openssl-legacy-provider' next dev",
-    "build": "next build",
+    "build": "NODE_OPTIONS='--openssl-legacy-provider' next build",
     "postbuild": "next-on-netlify",
     "deploy": "next build && next export",
     "start": "next start"
@@ -24,7 +24,7 @@
     "tailwindcss": "^2.2.8"
   },
   "devDependencies": {
-    "@types/node": "^18.3.0",
+    "@types/node": "^14.18.0",
     "@types/prettier": "^2",
     "@types/react": "^17.0.19",
     "@types/tailwindcss": "^2.2.1",
