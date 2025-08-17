@@ -1,3 +1,8 @@
+> [!WARNING]
+> This repository has been archived and is no longer deployed nor maintained.
+> 
+> To learn about the `silo-go` API go [directly to the router configuration](https://github.com/silo-technologies/silo-go/blob/dev/cmd/platform-app/main.go#L528).
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
